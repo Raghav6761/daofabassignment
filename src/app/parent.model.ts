@@ -3,6 +3,7 @@ export class ParentTransaction{
     public id:string,
     public sender: string,
     public receiver: string,
+    public totalPaidAmount: number,
     public totalAmount: string
   ){}
 }

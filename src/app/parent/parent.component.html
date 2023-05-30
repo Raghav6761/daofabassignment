@@ -5,7 +5,7 @@
       <th scope="col">Sender</th>
       <th scope="col">Receiver</th>
       <th scope="col">Total Amount</th>
-      <!-- <th scope="col">Total Paid Amount</th> -->
+      <th scope="col">Total Paid Amount</th>
     </tr>
   </thead>
   <tbody>
@@ -13,9 +13,8 @@
       <th scope="row">{{ transaction.id }}</th>
       <td>{{ transaction.sender }}</td>
       <td>{{ transaction.receiver }}</td>
-      <!-- <td>{{ transaction.totalAmount }}</td> -->
-      <td (click)="childTransactions(transaction.id)" style="cursor:pointer">{{ transaction.totalAmount }}</td>
-      <!-- <td (click)="onClickTotalPaidAmount(parent.id)">100</td> -->
+      <td>{{ transaction.totalAmount }}</td>
+      <td (click)="childTransactions(transaction.id)" style="cursor:pointer">{{ transaction.totalPaidAmount }}</td>
     </tr>
   </tbody>
 </table>

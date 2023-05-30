@@ -1,7 +1,10 @@
 export class ChildTransaction{
   constructor(
-    public id:number,
-    public parentid:number,
-    public paidAmount: number
+    public id:string,
+    public parentId:string,
+    public sender: string,
+    public receiver: string,
+    public totalAmount: string,
+    public paidAmount: string
   ){}
 }

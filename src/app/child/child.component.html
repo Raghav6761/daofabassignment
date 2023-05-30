@@ -5,23 +5,16 @@
       <th scope="col">Sender</th>
       <th scope="col">Receiver</th>
       <th scope="col">Total Amount</th>
-      <th scope="col">Total Paid Amount</th>
+      <th scope="col">Paid Amount</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>ABC</td>
-      <td>XYZ</td>
-      <td>200</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>ABC</td>
-      <td>XYZ</td>
-      <td>200</td>
-      <td>100</td>
+    <tr *ngFor="let transaction of childTransactions">
+      <th scope="row">{{transaction.id}}</th>
+      <td>{{ transaction.sender }}</td>
+      <td>{{ transaction.receiver }}</td>
+      <td>{{ transaction.totalAmount }}</td>
+      <td>{{ transaction.paidAmount }}</td>
     </tr>
   </tbody>
 </table>

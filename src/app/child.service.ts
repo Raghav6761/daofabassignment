@@ -12,10 +12,11 @@ export class ChildService {
 
   constructor(private http: HttpClient) { }
 
-  getChildTransactions(parentid: string): Observable<ChildTransaction[]> {
-    const childUrl = 'assets/child.json'; // Replace with the actual path to your child.json file
+  // functions call the json data using HttpClient and returns only response.data and then filters through the data based on our requirements.
+  getChildTransactions(parentId: string): Observable<ChildTransaction[]> {
+    const childUrl = 'assets/Child.json';
     return this.http.get<ChildTransaction[]>(childUrl).pipe(
-      map((response: any) => response.data.filter((child: ChildTransaction) => child.parentid === Number(parentid)))
+      map((response: any) => response.data.filter((child: ChildTransaction) => Number(child.parentId) === Number(parentId)))
     );
   }
 
