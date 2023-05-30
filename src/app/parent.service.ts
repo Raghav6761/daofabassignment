@@ -13,7 +13,18 @@ export class ParentService {
   constructor(private http: HttpClient) {}
 
   // functions call the json data using HttpClient and returns only response.data, because that's all we need.
-  getParentTransactions(): Observable<ParentTransaction[]> {
+  // getParentTransactions(): Observable<ParentTransaction[]> {
+  getParentTransactions(page: number, sort: string): Observable<ParentTransaction[]> {
+    let params = new HttpParams()
+      .set('_page', page.toString())
+      .set('_limit', '2')
+      .set('_sort', sort);
+    return this.http.get<ParentTransaction[]>(`${this.parentUrl}`, { params }).pipe(
+      map((response: any) => response.data)
+    );
+  }
+
+  getAllParentTransactions(): Observable<ParentTransaction[]> {
     return this.http.get<ParentTransaction[]>(this.parentUrl).pipe(
       map((response: any) => response.data)
     );

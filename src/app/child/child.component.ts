@@ -26,7 +26,7 @@ export class ChildComponent implements OnInit{
 
   // Calls all the parent transactions using parent service and then calls loadChildTransactions()
   loadParentTransactions(): void{
-    this.parentService.getParentTransactions().subscribe(
+    this.parentService.getAllParentTransactions().subscribe(
       (transactions: ParentTransaction[])=>{
         this.parentTransactions = transactions;
         this.loadChildTransactions();

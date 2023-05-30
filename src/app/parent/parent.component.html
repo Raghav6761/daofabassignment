@@ -17,4 +17,9 @@
       <td (click)="childTransactions(transaction.id)" style="cursor:pointer">{{ transaction.totalPaidAmount }}</td>
     </tr>
   </tbody>
+
+  <!-- Pagination controls -->
+  <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }}</span>
+  <button (click)="onPageChange(currentPage + 1)">Next</button>
 </table>

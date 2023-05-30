@@ -15,6 +15,8 @@ export class ParentComponent implements OnInit{
   parentTransactions: ParentTransaction[] = [];
   childpaymentTransactions: ChildTransaction[] = [];
   childPayments = 0;
+  currentPage: number = 1;
+  sortDirection: string = 'asc';
 
   constructor(private router: Router, private parentService: ParentService, private childService: ChildService){}
 
@@ -26,7 +28,7 @@ export class ParentComponent implements OnInit{
   // Child.json imports only the transactions that are in common with parent.json, this way we only have add in each.
 
   getParentTransactions(): void{
-    this.parentService.getParentTransactions().subscribe(
+    this.parentService.getParentTransactions(this.currentPage, this.sortDirection).subscribe(
       (transactions: ParentTransaction[])=>{
         this.parentTransactions = transactions;
 
@@ -51,6 +53,17 @@ export class ParentComponent implements OnInit{
         console.log('Error Fetching Parent Transcations: ', error);
       }
     );
+  }
+
+  onPageChange(page: number): void {
+    this.currentPage = page;
+    this.getParentTransactions();
+  }
+
+  onSortChange(): void {
+    // Toggle the sort direction between 'asc' and 'desc'
+    this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    this.getParentTransactions();
   }
 
   childTransactions(id: string): void{

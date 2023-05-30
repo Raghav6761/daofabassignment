@@ -16,6 +16,12 @@ The following assumptions have been made in the implementation of the project:
 
 5. Unit Tests: Unit tests for the components, services, and APIs are not within the scope of this assignment. However, it is encouraged to write tests for these components and services to ensure proper functionality.
 
+6. While I was expected to add server side pagination. I could not implement the same due to shortage of time and clash of commitments on my end and apologize for the same. If required and possible, please allow me more time to work and build the same.
+
+7. Normally, the end users is sent the production complete code and not the development. So, if you would like to view that please do let me know and I can send that as well. 
+
+That's all from my side, Cheers !!
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
