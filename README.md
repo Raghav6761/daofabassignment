@@ -2,6 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 
+## Project Assumptions
+
+The following assumptions have been made in the implementation of the project:
+
+1. Data Format : The data we are dealing with from the backend is completely based on JSON and any deviation from the structure provided 'Parent.json' and 'Child.json' can lead to error(s).
+
+2. Single Page Application: The application is designed as a single page application (SPA) using Angular routing. Navigation between the parent table and child details page is handled within the SPA without a full page refresh.
+
+3. UI/UX Design: The focus of this assignment is on functionality rather than extensive UI/UX design. The styling and layout of the components may be kept minimal for simplicity.
+
+4. Error Handling: Basic error handling is implemented, assuming that error messages will be displayed in the console for debugging purposes. Error handling for production-level applications may require additional implementation.
+
+5. Unit Tests: Unit tests for the components, services, and APIs are not within the scope of this assignment. However, it is encouraged to write tests for these components and services to ensure proper functionality.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
